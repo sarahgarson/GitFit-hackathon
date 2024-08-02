@@ -4,6 +4,7 @@ const getAllMeals = () => {
     return db('meals')
     .select('id', 'date_added')
     .orderBy('date_added')
+    .returning(['id', 'date_added'])
 };
 
 const insertMeal = (date_added) => {

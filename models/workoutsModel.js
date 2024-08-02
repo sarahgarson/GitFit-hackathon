@@ -2,8 +2,9 @@ const {db} = require('../config/knexconnect.js')
 
 const getAllWorkouts = () => {
     return db('workouts')
-    .select('datetime', 'time', 'total_calories_lost', 'exercise_names')
-    .orderBy('workout_id')
+    .select('id', 'datetime', 'time', 'total_calories_lost', 'exercise_names')
+    .orderBy('datetime')
+    .returning(['id', 'datetime', 'time', 'total_calories_lost', 'exercise_names'])
 };
 
 const insertWorkout = (datetime, time, total_calories_lost, exercise_names) => {

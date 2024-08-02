@@ -2,7 +2,7 @@ const {db} = require('../config/knexconnect.js')
 
 const getAllExercises = () => {
     return db('exercises')
-    .select('id')
+    .select('id', 'name', 'description', 'calories_lost', 'duration')
     .orderBy('name')
     .returning(['id', 'name', 'description', 'calories_lost', 'duration'])
 };

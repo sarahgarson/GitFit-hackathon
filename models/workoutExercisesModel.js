@@ -4,6 +4,7 @@ const getAllWorkoutExercises = () => {
     return db('workoutExercises')
     .select('workout_id', 'exercise_id')
     .orderBy('workout_id')
+    .returning(['workout_id', 'exercise_id'])
 };
 
 const insertWorkoutExercise = (workout_id, exercise_id) => {
