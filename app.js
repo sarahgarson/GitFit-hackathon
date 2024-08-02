@@ -16,6 +16,10 @@ app.use((req, res, next) => {
     next();
 });
 
+// Added it for serve static files from the 'public' directory
+app.use(express.static('public'));
+
+
 // Favicon handler
 app.get('/favicon.ico', (req, res) => res.status(204));
 
