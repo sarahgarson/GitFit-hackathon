@@ -57,32 +57,19 @@ header {
   margin-left: 80px;
 }
 
-.welcome{
-  color: orangered ;
+.meals-title{
+  color: #f77010;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  font-size: 30px;
+  margin-top: 30px;
 }
 
 .description{
   font-size: 20px;
-  color: #cb5500;
+  color: #050505;
  
 }
-
-#start-button {
-  background-color: #f77010;
-  color: #fff;
-  border-radius: 1px 1px 1px 1px;
-  border: #f77010 solid 1px;
-  border-radius: 10px;
-  padding: 10px 20px;
-  margin: 10px 30px;
-  cursor: pointer;
-  font-size: 20px;
-}
-
-#start-button:hover{
-  background-color: #ea853c;
-}
-
 
 footer {
   background-color: #f77010;
@@ -91,4 +78,5 @@ footer {
   padding: 1rem;
   bottom: 0;
   width: 100%;
+  position: fixed;
 }
