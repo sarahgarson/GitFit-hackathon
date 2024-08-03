@@ -1,14 +1,9 @@
 const express = require('express');
-<<<<<<< Updated upstream
 const path = require('path'); 
 require('dotenv').config();
 
 
 
-=======
-require('dotenv').config();
-
->>>>>>> Stashed changes
 const exercises_router = require('./routes/exercisesRouter.js');
 const workouts_router = require('./routes/workoutsRouter.js');
 const meal_components_router = require('./routes/mealComponentsRouter.js');
@@ -16,64 +11,29 @@ const meals_router = require('./routes/mealsRouter.js');
 const workout_exercises_router = require('./routes/workoutExercisesRouter.js');
 const components_router = require('./routes/componentsRouter.js');
 
-<<<<<<< Updated upstream
 
 
 const app = express();
 
 
 
-=======
-const app = express();
-
->>>>>>> Stashed changes
 // Log requests
 app.use((req, res, next) => {
     console.log(`Received request for ${req.url}`);
     next();
 });
 
-<<<<<<< Updated upstream
 
 
 // Added it for serve static files from the 'public' directory
 app.use(express.static('public'));
 
-
-// Serve static files from multiple directories:
-// app.use(express.static('public-exercises'));
-// app.use(express.static('public-workouts'));
-// app.use(express.static('public-workouts-exercises'));
-
-
-
-
-//wrote it in case we need it when connecting html/css/js to Node.js
-
-// Route for Exercises page
-// app.get('/exercises', (req, res) => {
-//     res.sendFile(path.join(__dirname, 'public-exercises/exercises.html'));
-// });
-
-// // Route for Workouts page
-// app.get('/workouts', (req, res) => {
-//     res.sendFile(path.join(__dirname, 'public-workouts/workouts.html'));
-// });
-
-// // Route for Workouts-Exercises page
-// app.get('/workouts-exercises', (req, res) => {
-//     res.sendFile(path.join(__dirname, 'public-workouts-exercises/workouts-exercises.html'));
-// });
-
-// // Route for Meals page
-// app.get('/meals', (req, res) => {
-//     res.sendFile(path.join(__dirname, 'public-meals/meals.html'));
-// });
-
-// // Route for Meal Ingredients page
-// app.get('/components', (req, res) => {
-//     res.sendFile(path.join(__dirname, 'public-components/components.html'));
-// });
+// Serve static files from other directories
+app.use('/exercises', express.static(path.join(__dirname, 'public-exercises')));
+app.use('/workouts', express.static(path.join(__dirname, 'public-workouts')));
+app.use('/workoutsExercises', express.static(path.join(__dirname, 'public-workoutsExercises')));
+app.use('/meals', express.static(path.join(__dirname, 'public-meals')));
+app.use('/components', express.static(path.join(__dirname, 'public-mealComponents')));
 
 
 
@@ -83,53 +43,45 @@ app.get('/favicon.ico', (req, res) => res.status(204));
 
 
 
-=======
-// Favicon handler
-app.get('/favicon.ico', (req, res) => res.status(204));
-
->>>>>>> Stashed changes
 // Body parser
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-<<<<<<< Updated upstream
 
 
-=======
->>>>>>> Stashed changes
-// Routes
-app.use('/exercises', exercises_router);
-app.use('/workouts', workouts_router);
-app.use('/meal_components', meal_components_router);
-app.use('/meals', meals_router);
-app.use('/workout_exercises', workout_exercises_router);
-app.use('/components', components_router);
-
-<<<<<<< Updated upstream
+// Routes(keeping this to check with Zach before deleting )
+// app.use('/exercises', exercises_router);
+// app.use('/workouts', workouts_router);
+// app.use('/meal_components', meal_components_router);
+// app.use('/meals', meals_router);
+// app.use('/workout_exercises', workout_exercises_router);
+// app.use('/components', components_router);
 
 
-=======
->>>>>>> Stashed changes
+// Routes 2 (checking to make sure it works)
+//IT WORKED WITH THESE ROUTES PATHS 
+app.use('/api/exercises', exercises_router);
+app.use('/api/workouts', workouts_router);
+app.use('/api/meal_components', meal_components_router);
+app.use('/api/meals', meals_router);
+app.use('/api/workout_exercises', workout_exercises_router);
+app.use('/api/components', components_router);
+
+
 // Default route
 app.get('/', (req, res) => {
     res.send('Server is running');
 });
 
-<<<<<<< Updated upstream
 
 
-=======
->>>>>>> Stashed changes
 // Catch-all for undefined routes
 app.use((req, res) => {
     res.status(404).send('Route not found');
 });
 
-<<<<<<< Updated upstream
 
 
-=======
->>>>>>> Stashed changes
 // Listener
 const PORT = process.env.PORT || 3010;
 app.listen(PORT, () => {
