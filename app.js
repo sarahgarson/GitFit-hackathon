@@ -74,7 +74,6 @@ app.get('/', (req, res) => {
 });
 
 
-
 // Catch-all for undefined routes
 app.use((req, res) => {
     res.status(404).send('Route not found');
