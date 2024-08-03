@@ -28,41 +28,12 @@ app.use((req, res, next) => {
 // Added it for serve static files from the 'public' directory
 app.use(express.static('public'));
 
-
-// Serve static files from multiple directories:
-// app.use(express.static('public-exercises'));
-// app.use(express.static('public-workouts'));
-// app.use(express.static('public-workouts-exercises'));
-
-
-
-
-//wrote it in case we need it when connecting html/css/js to Node.js
-
-// Route for Exercises page
-// app.get('/exercises', (req, res) => {
-//     res.sendFile(path.join(__dirname, 'public-exercises/exercises.html'));
-// });
-
-// // Route for Workouts page
-// app.get('/workouts', (req, res) => {
-//     res.sendFile(path.join(__dirname, 'public-workouts/workouts.html'));
-// });
-
-// // Route for Workouts-Exercises page
-// app.get('/workouts-exercises', (req, res) => {
-//     res.sendFile(path.join(__dirname, 'public-workouts-exercises/workouts-exercises.html'));
-// });
-
-// // Route for Meals page
-// app.get('/meals', (req, res) => {
-//     res.sendFile(path.join(__dirname, 'public-meals/meals.html'));
-// });
-
-// // Route for Meal Ingredients page
-// app.get('/components', (req, res) => {
-//     res.sendFile(path.join(__dirname, 'public-components/components.html'));
-// });
+// Serve static files from other directories
+app.use('/exercises', express.static(path.join(__dirname, 'public-exercises')));
+app.use('/workouts', express.static(path.join(__dirname, 'public-workouts')));
+app.use('/workoutsExercises', express.static(path.join(__dirname, 'public-workoutsExercises')));
+app.use('/meals', express.static(path.join(__dirname, 'public-meals')));
+app.use('/components', express.static(path.join(__dirname, 'public-mealComponents')));
 
 
 
@@ -78,14 +49,23 @@ app.use(express.json());
 
 
 
-// Routes
-app.use('/exercises', exercises_router);
-app.use('/workouts', workouts_router);
-app.use('/meal_components', meal_components_router);
-app.use('/meals', meals_router);
-app.use('/workout_exercises', workout_exercises_router);
-app.use('/components', components_router);
+// Routes(keeping this to check with Zach before deleting )
+// app.use('/exercises', exercises_router);
+// app.use('/workouts', workouts_router);
+// app.use('/meal_components', meal_components_router);
+// app.use('/meals', meals_router);
+// app.use('/workout_exercises', workout_exercises_router);
+// app.use('/components', components_router);
 
+
+// Routes 2 (checking to make sure it works)
+//IT WORKED WITH THESE ROUTES PATHS 
+app.use('/api/exercises', exercises_router);
+app.use('/api/workouts', workouts_router);
+app.use('/api/meal_components', meal_components_router);
+app.use('/api/meals', meals_router);
+app.use('/api/workout_exercises', workout_exercises_router);
+app.use('/api/components', components_router);
 
 
 // Default route

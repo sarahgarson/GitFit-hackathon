@@ -48,17 +48,16 @@ nav {
 
 
 
-/* Add styles for the header:*/
+/* Add styles for the main:*/
 
-header{
+header {
   padding: 2rem;
   font-size: 70px;
   margin-bottom: 50px;
   margin-left: 80px;
 }
 
-
-.exercises {
+.meal-title{
   color: #f77010;
   font-size: 2rem;
   margin-bottom: 40px;
@@ -66,10 +65,11 @@ header{
   margin-top: 30px;
 }
 
-.description {
+.description{
   font-size: 20px;
+  color: #000000;
+ 
 }
-
 
 
 footer {
