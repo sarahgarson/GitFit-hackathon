@@ -4,7 +4,10 @@ const getAllMealComponents = () => {
     return db('mealComponents')
     .select('meal_id', 'component_id', 'quantity')
     .orderBy('meal_id')
+<<<<<<< Updated upstream
     .returning(['meal_id', 'component_id', 'quantity'])
+=======
+>>>>>>> Stashed changes
 };
 
 const insertMealComponent = (meal_id, component_id, quantity) => {

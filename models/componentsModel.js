@@ -2,7 +2,11 @@ const { db } = require('../config/knexconnect.js');
 
 const getAllComponents = () => {
     return db('components')
+<<<<<<< Updated upstream
     .select('id', 'name', 'calories', 'protein', 'fat', 'sodium', 'created_by', 'created_at', 'updated_at')
+=======
+    .select('id')
+>>>>>>> Stashed changes
     .orderBy('name')
     .returning(['id', 'name', 'calories', 'protein', 'fat', 'sodium', 'created_by', 'created_at', 'updated_at']);
 };

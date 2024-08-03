@@ -4,7 +4,10 @@ const getAllWorkoutExercises = () => {
     return db('workoutExercises')
     .select('workout_id', 'exercise_id')
     .orderBy('workout_id')
+<<<<<<< Updated upstream
     .returning(['workout_id', 'exercise_id'])
+=======
+>>>>>>> Stashed changes
 };
 
 const insertWorkoutExercise = (workout_id, exercise_id) => {

@@ -1,9 +1,14 @@
 const express = require('express');
+<<<<<<< Updated upstream
 const path = require('path'); 
 require('dotenv').config();
 
 
 
+=======
+require('dotenv').config();
+
+>>>>>>> Stashed changes
 const exercises_router = require('./routes/exercisesRouter.js');
 const workouts_router = require('./routes/workoutsRouter.js');
 const meal_components_router = require('./routes/mealComponentsRouter.js');
@@ -11,18 +16,24 @@ const meals_router = require('./routes/mealsRouter.js');
 const workout_exercises_router = require('./routes/workoutExercisesRouter.js');
 const components_router = require('./routes/componentsRouter.js');
 
+<<<<<<< Updated upstream
 
 
 const app = express();
 
 
 
+=======
+const app = express();
+
+>>>>>>> Stashed changes
 // Log requests
 app.use((req, res, next) => {
     console.log(`Received request for ${req.url}`);
     next();
 });
 
+<<<<<<< Updated upstream
 
 
 // Added it for serve static files from the 'public' directory
@@ -72,12 +83,20 @@ app.get('/favicon.ico', (req, res) => res.status(204));
 
 
 
+=======
+// Favicon handler
+app.get('/favicon.ico', (req, res) => res.status(204));
+
+>>>>>>> Stashed changes
 // Body parser
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+<<<<<<< Updated upstream
 
 
+=======
+>>>>>>> Stashed changes
 // Routes
 app.use('/exercises', exercises_router);
 app.use('/workouts', workouts_router);
@@ -86,22 +105,31 @@ app.use('/meals', meals_router);
 app.use('/workout_exercises', workout_exercises_router);
 app.use('/components', components_router);
 
+<<<<<<< Updated upstream
 
 
+=======
+>>>>>>> Stashed changes
 // Default route
 app.get('/', (req, res) => {
     res.send('Server is running');
 });
 
+<<<<<<< Updated upstream
 
 
+=======
+>>>>>>> Stashed changes
 // Catch-all for undefined routes
 app.use((req, res) => {
     res.status(404).send('Route not found');
 });
 
+<<<<<<< Updated upstream
 
 
+=======
+>>>>>>> Stashed changes
 // Listener
 const PORT = process.env.PORT || 3010;
 app.listen(PORT, () => {
