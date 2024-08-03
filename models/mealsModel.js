@@ -4,10 +4,7 @@ const getAllMeals = () => {
     return db('meals')
     .select('id', 'date_added')
     .orderBy('date_added')
-<<<<<<< Updated upstream
     .returning(['id', 'date_added'])
-=======
->>>>>>> Stashed changes
 };
 
 const insertMeal = (date_added) => {
