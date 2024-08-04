@@ -40,6 +40,29 @@ JOIN
 GROUP BY
     m.id;
 
+
+    --HAD TO INSERTS EXAMPLES TO MAKE SURE IT WAS APPEARING IN THE WEBPAGE
+
+    	INSERT INTO components (name, calories, protein, fat, sodium, created_by)
+VALUES
+    ('Chicken Breast', 165, 31, 3.6, 74, 1),
+    ('Broccoli', 55, 3.7, 0.6, 33, 1),
+    ('Brown Rice', 111, 2.6, 0.9, 10, 1);
+	
+	
+	
+	INSERT INTO meals (date_added)
+VALUES
+    ('2024-08-01 12:00:00'),
+    ('2024-08-02 18:00:00');
+	
+	
+	INSERT INTO meal_components (meal_id, component_id, quantity)
+VALUES
+    (1, 1, 200),  -- 200 grams of Chicken Breast in meal 1
+    (1, 2, 100),  -- 100 grams of Broccoli in meal 1
+    (2, 3, 150);  -- 150 grams of Brown Rice in meal 2
+
 --1. Create the exercises Table:
 -- This table includes the duration column from the start.
 

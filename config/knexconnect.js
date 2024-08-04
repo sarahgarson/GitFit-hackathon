@@ -13,6 +13,34 @@ const db = knex({
     }
 })
 
+//-----------------------------------------------
+
+// Example function to get data from a table
+const getExercises = async () => {
+    try {
+        const exercises = await db.select('*').from('exercises');
+        return exercises;
+    } catch (error) {
+        console.error('Error fetching exercises:', error);
+        throw error;
+    }
+};
+
+
+const getMealComponents = async () => {
+    try {
+        const components = await db.select('*').from('meal_components');
+        return components;
+    } catch (error) {
+        console.error('Error fetching meal components:', error);
+        throw error;
+    }
+};
+
+//----------------------------------------------
+
 module.exports = {
-    db
+    db,
+    getExercises,
+    getMealComponents
 }

@@ -28,6 +28,7 @@ app.use((req, res, next) => {
 // Added it for serve static files from the 'public' directory
 app.use(express.static('public'));
 
+
 // Serve static files from other directories
 app.use('/exercises', express.static(path.join(__dirname, 'public-exercises')));
 app.use('/workouts', express.static(path.join(__dirname, 'public-workouts')));
@@ -68,10 +69,21 @@ app.use('/api/workout_exercises', workout_exercises_router);
 app.use('/api/components', components_router);
 
 
-// Default route
+//-----------------------------------------------
+
+//THE MAIN PAGE
+
 app.get('/', (req, res) => {
-    res.send('Server is running');
+    res.sendFile(path.join(__dirname, 'public/index.html'));
 });
+
+//----------------------------------------------
+
+
+// Default route
+// app.get('/', (req, res) => {
+//     res.send('Server is running');
+// });
 
 
 
@@ -82,7 +94,7 @@ app.use((req, res) => {
 
 
 
-// Listener
+// Listener function
 const PORT = process.env.PORT || 3010;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
