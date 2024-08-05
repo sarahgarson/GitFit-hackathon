@@ -63,7 +63,7 @@ app.use(express.json());
 //IT WORKED WITH THESE ROUTES PATHS 
 app.use('/api/exercises', exercises_router);
 app.use('/api/workouts', workouts_router);
-app.use('/api/meal_components', meal_components_router);
+app.use('/api/mealComponents', meal_components_router);
 app.use('/api/meals', meals_router);
 app.use('/api/workout_exercises', workout_exercises_router);
 app.use('/api/components', components_router);

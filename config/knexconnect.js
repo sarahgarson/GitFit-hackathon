@@ -30,7 +30,7 @@ const getExercises = async () => {
 
 const getMealComponents = async () => {
   try {
-    const components = await db.select("*").from("meal_components");
+    const components = await db.select("*").from("mealComponents");
     return components;
   } catch (error) {
     console.error("Error fetching meal components:", error);

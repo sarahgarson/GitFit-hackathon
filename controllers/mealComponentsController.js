@@ -9,6 +9,7 @@ const _getAllMealComponents = async (req, res) => {
         res.status(404).json({error: 'something went wrong'});
     }
 };
+
 const _insertMealComponent = async (req, res) => {
     const {meal_id, component_id, quantity} = req.body;
     try {

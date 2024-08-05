@@ -4,7 +4,7 @@ const getAllMealComponents = () => {
     return db('mealComponents')
     .select('meal_id', 'component_id', 'quantity')
     .orderBy('meal_id')
-    .returning(['meal_id', 'component_id', 'quantity'])
+    // .returning(['meal_id', 'component_id', 'quantity'])
 };
 
 const insertMealComponent = (meal_id, component_id, quantity) => {
