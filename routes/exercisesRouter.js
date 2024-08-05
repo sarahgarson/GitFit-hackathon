@@ -1,6 +1,6 @@
 const express = require('express');
 const {_getAllExercises, _insertExercise, _updateExercise, _deleteExercise} = require('../controllers/exercisesController.js');
-const insertExercise = require('../models/Exercise');
+const insertExercise = require('../models/exercisesModel.js');
 
 
 const router = express.Router();
@@ -18,7 +18,15 @@ router.get('/', async (req, res) => {
   }
 });
 
-
+// Create a new exercise
+router.post('/', async (req, res) => {
+  try {
+      const exercise = await insertExercise.create(req.body);
+      res.status(201).send(exercise);
+  } catch (error) {
+      res.status(400).send({ error: error.message });
+  }
+});
 //---------------------------------------
 
 

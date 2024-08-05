@@ -12,7 +12,7 @@ const _getAllExercises = async (req, res) => {
 const _insertExercise = async (req, res) => {
     const {name, description, calories_lost, duration} = req.body;
     try {
-        const result = await insertComponent(name, description, calories_lost, duration);
+        const result = await insertExercise(name, description, calories_lost, duration);
         res.json(result);
     } catch (err) {
         console.log(err);
