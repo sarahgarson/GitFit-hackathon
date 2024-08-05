@@ -4,7 +4,7 @@ const getAllExercises = () => {
     return db('exercises')
     .select('id', 'name', 'description', 'calories_lost', 'duration')
     .orderBy('name')
-    .returning(['id', 'name', 'description', 'calories_lost', 'duration'])
+    // .returning(['id', 'name', 'description', 'calories_lost', 'duration'])
 };
 
 const insertExercise = (name, description, calories_lost, duration) => {
