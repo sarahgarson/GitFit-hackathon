@@ -51,7 +51,7 @@ document
       console.log("Exercise added:", data);
 
       // Manipulate the DOM to display the new exercise
-      const exercisesContainer = document.getElementById("components-list");
+      const componentsContainer = document.getElementById("components-list");
       if (componentsContainer) {
         const componentElement = document.createElement("div");
         componentElement.textContent = 
