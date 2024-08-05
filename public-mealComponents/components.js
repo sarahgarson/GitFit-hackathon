@@ -30,6 +30,7 @@ document
     const name = document.getElementById("component-name").value;
     const calories = document.getElementById("component-calories").value;
     const protein = document.getElementById("component-protein").value;
+    const fat = document.getElementById("component-fat").value;
     const sodium = document.getElementById("component-sodium").value;
     const created_by = document.getElementById("component-created_by").value;
     const created_at = document.getElementById("component-created_at").value;
