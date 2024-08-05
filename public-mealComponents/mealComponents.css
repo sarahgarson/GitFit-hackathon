@@ -47,8 +47,7 @@ nav {
 }
 
 
-
-/* Add styles for the main:*/
+/* Add styles for the header:*/
 
 header {
   padding: 2rem;
@@ -57,7 +56,7 @@ header {
   margin-left: 80px;
 }
 
-.meals-title{
+.meal-title{
   color: #f77010;
   font-size: 2rem;
   margin-bottom: 40px;
@@ -67,9 +66,10 @@ header {
 
 .description{
   font-size: 20px;
-  color: #050505;
+  color: #000000;
  
 }
+
 
 footer {
   background-color: #f77010;
@@ -78,5 +78,4 @@ footer {
   padding: 1rem;
   bottom: 0;
   width: 100%;
-  position: fixed;
 }

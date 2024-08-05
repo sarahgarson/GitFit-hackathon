@@ -7,17 +7,17 @@ const router = express.Router();
 
 //SECTION FOR ADDING THE TABLES TO FRONTEND
 
-const { getMealComponents } = require('../config/knexconnect');
+// const { getMealComponents } = require('../config/knexconnect');
 
-router.get('/api/meal_components', async (req, res) => {
-  try {
-      const components = await getMealComponents();
-      res.json(components);
-  } catch (error) {
-      console.error('Error in route handler:', error);
-      res.status(500).send('Error fetching meal components');
-  }
-});
+// router.get('/api/meal_components', async (req, res) => {
+//   try {
+//       const components = await getMealComponents();
+//       res.json(components);
+//   } catch (error) {
+//       console.error('Error in route handler:', error);
+//       res.status(500).send('Error fetching meal components');
+//   }
+// });
 
 //-----------------------------------------------
 
