@@ -1,5 +1,7 @@
 const express = require('express');
 const {_getAllExercises, _insertExercise, _updateExercise, _deleteExercise} = require('../controllers/exercisesController.js');
+const insertExercise = require('../models/Exercise');
+
 
 const router = express.Router();
 
