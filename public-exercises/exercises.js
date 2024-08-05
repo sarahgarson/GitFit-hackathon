@@ -9,14 +9,16 @@ fetch("/api/exercises/all")
         const exerciseElement = document.createElement("div");
         exerciseElement.textContent = `Name: ${exercise.name},
             Description: ${exercise.description} ,
-            Calories Lost${exercise.calories_lost} ,
+            Calories Lost: ${exercise.calories_lost} ,
             Duration: ${exercise.duration.hours}`;
 
         exercisesContainer.appendChild(exerciseElement);
       });
     }
   })
-  .catch((error) => console.error("Error fetching exercises:", error));
+  .catch((error) => {
+    console.error("Error fetching exercises:", error);
+  });
 
 document
   .getElementById("add-exercise")
@@ -42,7 +44,28 @@ document
 
       const data = await response.json();
       console.log("Exercise added:", data);
+
+      // Manipulate the DOM to display the new exercise
+      const exercisesContainer = document.getElementById("exercises-list");
+      if (exercisesContainer) {
+        const exerciseElement = document.createElement("div");
+        exerciseElement.textContent = `Name: ${name},
+            Description: ${description} ,
+            Calories Lost: ${calories_lost} ,
+            Duration: ${duration}`;
+
+        exercisesContainer.appendChild(exerciseElement);
+
+        // Reset the input bars
+        document.getElementById("exercise-name").value = "";
+        document.getElementById("exercise-description").value = "";
+        document.getElementById("exercise-calories_lost").value = "";
+        document.getElementById("exercise-duration").value = "";
+
+        }
     } catch (error) {
       console.error("Failed to add exercise:", error);
-    }
+    } 
   });
+
+
