@@ -5,10 +5,6 @@ require('dotenv').config();
 
 
 const exercises_router = require('./routes/exercisesRouter.js');
-const workouts_router = require('./routes/workoutsRouter.js');
-const meal_components_router = require('./routes/mealComponentsRouter.js');
-const meals_router = require('./routes/mealsRouter.js');
-const workout_exercises_router = require('./routes/workoutExercisesRouter.js');
 const components_router = require('./routes/componentsRouter.js');
 
 
@@ -31,9 +27,6 @@ app.use(express.static('public'));
 
 // Serve static files from other directories
 app.use('/exercises', express.static(path.join(__dirname, 'public-exercises')));
-app.use('/workouts', express.static(path.join(__dirname, 'public-workouts')));
-app.use('/workoutsExercises', express.static(path.join(__dirname, 'public-workoutsExercises')));
-app.use('/meals', express.static(path.join(__dirname, 'public-meals')));
 app.use('/components', express.static(path.join(__dirname, 'public-mealComponents')));
 
 
@@ -50,22 +43,12 @@ app.use(express.json());
 
 
 
-// Routes(keeping this to check with Zach before deleting )
-// app.use('/exercises', exercises_router);
-// app.use('/workouts', workouts_router);
-// app.use('/meal_components', meal_components_router);
-// app.use('/meals', meals_router);
-// app.use('/workout_exercises', workout_exercises_router);
-// app.use('/components', components_router);
+
 
 
 // Routes 2 (checking to make sure it works)
 //IT WORKED WITH THESE ROUTES PATHS 
 app.use('/api/exercises', exercises_router);
-app.use('/api/workouts', workouts_router);
-app.use('/api/mealComponents', meal_components_router);
-app.use('/api/meals', meals_router);
-app.use('/api/workout_exercises', workout_exercises_router);
 app.use('/api/components', components_router);
 
 
