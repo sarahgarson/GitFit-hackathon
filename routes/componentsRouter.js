@@ -3,6 +3,7 @@ const {_getAllComponents, _insertComponent, _updateComponent, _deleteComponent} 
 
 const router = express.Router();
 
+
 router.get('/all', _getAllComponents);
 router.post('/create', _insertComponent);
 router.put('/update', _updateComponent);

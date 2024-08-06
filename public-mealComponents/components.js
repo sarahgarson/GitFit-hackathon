@@ -2,6 +2,11 @@ fetch("/api/components/all")
   .then((response) => response.json())
   .then((data) => {
     console.log(data);
+
+        // Sort the data by ID or another field if needed
+        data.sort((a, b) => a.id - b.id);
+
+
     // Manipulate the DOM to display the data
     const componentsContainer = document.getElementById("components-list");
     if (componentsContainer) {
