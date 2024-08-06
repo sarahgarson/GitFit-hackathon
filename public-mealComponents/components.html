@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Node.js App</title>
-    <link rel="stylesheet" href="Components.css">
+    <link rel="stylesheet" href="components.css">
     <script src="https://kit.fontawesome.com/8e3745808b.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -29,6 +29,7 @@
 
     <!--FOR MEAL COMPONENTS TABLE-->
     <div id="components-list"></div>
+    <form>
     <input type="text" id="component-id" placeholder="Component ID">
     <input type="text" id="component-name" placeholder="Name">
     <input type="text" id="component-calories" placeholder="Calories">
@@ -38,15 +39,19 @@
     <input type="text" id="component-created_by" placeholder="Created By">
     <input type="text" id="component-created_at" placeholder="Created At">
     <input type="text" id="component-updated_at" placeholder="Updated At">
+</form>
+
+<div id="button">
     <button id="add-component">Add Meal Component</button>
     <button id="update-component">Update Meal Component</button>
     <button id="delete-component">Delete Meal Component</button>
+</div>
 
 
     <footer>
         <p>© 2024 GitFit App</p>
     </footer>
 
-    <script src="Components.js"></script>
+    <script src="components.js"></script>
 </body>
 </html>

@@ -72,6 +72,113 @@ header{
 
 
 
+/* Style for the exercise container */
+
+
+#exercises-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+#exercises-list div {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 10px;
+  width: 300px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+
+#exercises-list div:hover {
+  transform: scale(1.05);
+  background-color: #f77010;
+  color: #fff;
+}
+
+
+#exercises-list div p {
+  margin: 0;
+  padding: 5px 0;
+}
+
+#exercises-list div p span {
+  font-weight: bold;
+}
+
+
+
+
+/* Input field styling */
+
+
+input[type="text"] {
+  width: 80%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+
+#button {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  
+}
+
+#add-exercise, #update-exercise, #delete-exercise {
+  background-color: #ee9535;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 30px 30px;
+  font-size: 16px;
+}
+
+
+#delete-exercise:hover {
+  background-color: #f77010;
+}
+
+#update-exercise:hover {
+  background-color: #f77010;
+}
+
+#add-exercise:hover {
+  background-color: #f77010;
+}
+
+
+
+
+#exercise-id, #exercise-name, #exercise-description, 
+#exercise-calories_lost, #exercise-duration {
+  display: block;
+  width: 300px;
+  margin-bottom: 20px;
+  
+}
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+
+
+
+/* Add styles for the footer:*/
+
 footer {
   background-color: #f77010;
   color: #fff;
