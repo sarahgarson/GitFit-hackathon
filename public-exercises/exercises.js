@@ -2,6 +2,8 @@ fetch("/api/exercises/all")
   .then((response) => response.json())
   .then((data) => {
     console.log(data);
+
+    data.sort((a, b) => a.id - b.id);
     // Manipulate the DOM to display the data
     const exercisesContainer = document.getElementById("exercises-list");
     if (exercisesContainer) {
