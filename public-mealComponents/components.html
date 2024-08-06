@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Node.js App</title>
-    <link rel="stylesheet" href="mealComponents.css">
+    <link rel="stylesheet" href="Components.css">
     <script src="https://kit.fontawesome.com/8e3745808b.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -17,7 +17,7 @@
           <!-- <a class="active" href="/workouts/workouts.html">Workouts</a> -->
           <!-- <a class="active" href="/workoutsExercises/workoutsExercises.html">Workout Plans</a> -->
           <!-- <a class="active" href="/meals/meal.html">Meal Plans</a> -->
-          <a class="active" href="/components/mealComponents.html">Meal Plants</a>
+          <a class="active" href="/components/components.html">Meal Plants</a>
           
         </div>
     </nav>
@@ -29,6 +29,7 @@
 
     <!--FOR MEAL COMPONENTS TABLE-->
     <div id="components-list"></div>
+    <input type="text" id="component-id" placeholder="Component ID">
     <input type="text" id="component-name" placeholder="Name">
     <input type="text" id="component-calories" placeholder="Calories">
     <input type="text" id="component-protein" placeholder="Protein">
@@ -36,13 +37,16 @@
     <input type="text" id="component-sodium" placeholder="Sodium">
     <input type="text" id="component-created_by" placeholder="Created By">
     <input type="text" id="component-created_at" placeholder="Created At">
+    <input type="text" id="component-updated_at" placeholder="Updated At">
     <button id="add-component">Add Meal Component</button>
+    <button id="update-component">Update Meal Component</button>
+    <button id="delete-component">Delete Meal Component</button>
 
 
     <footer>
         <p>© 2024 GitFit App</p>
     </footer>
 
-    <script src="mealComponents.js"></script>
+    <script src="Components.js"></script>
 </body>
 </html>

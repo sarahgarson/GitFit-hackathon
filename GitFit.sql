@@ -6,7 +6,7 @@ CREATE TABLE components (
     protein INT,
     fat INT,
     sodium INT,
-    created_by INT,
+    created_by TEXT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
@@ -70,7 +70,7 @@ CREATE TABLE exercises (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     description TEXT,
-    calories_lost INT NOT NULL,
+    calories_lost INT,
     duration INTERVAL NOT NULL DEFAULT '01:00:00'
 );
 

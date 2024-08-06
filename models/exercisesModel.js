@@ -13,10 +13,10 @@ const insertExercise = (name, description, calories_lost, duration) => {
     .returning(['id', 'name', 'description', 'calories_lost', 'duration'])
 };
 
-const updateExercise = (name, description, calories_lost, duration) => {
+const updateExercise = (id, name, description, calories_lost, duration) => {
     return db('exercises')
     .where({id})
-    .update({name, description, calories_lost, duration})
+    .update({id, name, description, calories_lost, duration})
     .returning(['id', 'name', 'description', 'calories_lost', 'duration'])
 };
 
